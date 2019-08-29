@@ -1,0 +1,58 @@
+# Project: FormasGeometricas
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -std=c++11
+CC       = gcc.exe -std=c++11
+WINDRES  = windres.exe
+OBJ      = Forma.o Ponto.o main.o Forma2D.o Circulo.o Quadrado.o Triangulo.o Cubo.o Forma3D.o Esfera.o Tetaedro.o
+LINKOBJ  = Forma.o Ponto.o main.o Forma2D.o Circulo.o Quadrado.o Triangulo.o Cubo.o Forma3D.o Esfera.o Tetaedro.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -pg
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = FormasGeometricas.exe
+CXXFLAGS = $(CXXINCS) -pg
+CFLAGS   = $(INCS) -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Forma.o: Forma.cpp
+	$(CPP) -c Forma.cpp -o Forma.o $(CXXFLAGS)
+
+Ponto.o: Ponto.cpp
+	$(CPP) -c Ponto.cpp -o Ponto.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Forma2D.o: Forma2D.cpp
+	$(CPP) -c Forma2D.cpp -o Forma2D.o $(CXXFLAGS)
+
+Circulo.o: Circulo.cpp
+	$(CPP) -c Circulo.cpp -o Circulo.o $(CXXFLAGS)
+
+Quadrado.o: Quadrado.cpp
+	$(CPP) -c Quadrado.cpp -o Quadrado.o $(CXXFLAGS)
+
+Triangulo.o: Triangulo.cpp
+	$(CPP) -c Triangulo.cpp -o Triangulo.o $(CXXFLAGS)
+
+Cubo.o: Cubo.cpp
+	$(CPP) -c Cubo.cpp -o Cubo.o $(CXXFLAGS)
+
+Forma3D.o: Forma3D.cpp
+	$(CPP) -c Forma3D.cpp -o Forma3D.o $(CXXFLAGS)
+
+Esfera.o: Esfera.cpp
+	$(CPP) -c Esfera.cpp -o Esfera.o $(CXXFLAGS)
+
+Tetaedro.o: Tetaedro.cpp
+	$(CPP) -c Tetaedro.cpp -o Tetaedro.o $(CXXFLAGS)
